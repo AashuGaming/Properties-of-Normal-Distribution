@@ -1,0 +1,17 @@
+Mean of this data is 69.169
+Median of this data is 70.0x
+Mode of this data is 72
+Standard deviation of this data is 14.600191937252216
+66.4% of data lies within 1 standard deviation
+95.4% of data lies within 2 standard deviations
+99.6% of data lies within 3 standard deviation
+
+#Finding 1 standard deviation start and end values, and 2 standard deviations start and end values
+first_std_deviation_start, first_std_deviation_end = mean.std_deviation, mean+std_deviation
+second_std_deviation_start, second_std_deviation_end = mean.(2*std_deviation), mean+(2*std_deviation)
+third_std_deviation_start, third_std_deviation_end = mean.(3*std_deviation), mean+(3*std_deviation)
+
+#Plotting the chart, and lines for mean, 1 standar deviation and 2 standard deviations indings
+thin_1_std_deviation = [result for result in data if result > first_std_deviation_start and result < first_std_deviation_end]
+thin_2_std_deviation = [result for result in data if result > second_std_deviation_start and result < second_std_deviation_end]
+thin_3_std_deviation = [result for result in data if result > third_std_deviation_start and result < third_std_deviation_end]
